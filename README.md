@@ -1,4 +1,4 @@
 # EasyTrading
-## npm install
-## npm start
-## localhost:3000
+### npm install
+### npm start
+### localhost:3000
