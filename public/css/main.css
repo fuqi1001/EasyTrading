@@ -1,0 +1,42 @@
+.jumbotron {
+    margin-bottom: 0px;
+    /*height: 250px;*/
+    /*color: white;*/    
+    position: relative;
+    background: url("../image/font.jpg") no-repeat center center;;
+}
+
+.paci{
+    font-family: 'Pacifico', cursive;
+}
+.btn-login {
+	background-color: #59B2E0;
+	outline: none;
+	color: #fff;
+	font-size: 14px;
+	height: auto;
+	font-weight: normal;
+	padding: 14px 0;
+	text-transform: uppercase;
+	border-color: #59B2E6;
+}
+.btn-login:hover,
+.btn-login:focus {
+	color: #fff;
+	background-color: #53A3CD;
+	border-color: #53A3CD;
+}
+
+.card {
+  margin-top: 50px;
+  background: #eee;
+  padding: 3em;
+  line-height: 1.5em; }
+
+li.ui-state-default{
+    
+    border:none;
+    border-bottom:1px solid #ddd;
+    text-align: left;
+    padding-bottom: 10px;
+}

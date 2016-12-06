@@ -1,0 +1,223 @@
+<div class="jumbotron" style="background: #f2f2f2">
+	<div class="container ">
+		<div class="row  ">
+			<div class="col-sm-12 text-col text-center">
+				<section>
+					<div class="row">
+						{{#each myapartment}}
+						<div class="col-sm-6 col-md-4" sytle="float:left">
+							<div class="thumbnail">
+								<img src="..." alt="...">
+								<div class="caption">
+									<h3>{{this.name}}</h3>
+									<p>${{this.price}}</p>
+									<p><a href="/apartments/{{this._id}}" class="btn btn-primary" role="button">check detail</a></p>
+								</div>
+							</div>
+						</div>
+						{{/each}}
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="jumbotron" style="background: #d3d3d3">
+	<div class="container ">
+		<div class="panel-group" id="accordion">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+					Hoboken
+				</a>
+					</h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse">
+					<div class="panel-body text-col text-center">
+						<section>
+							<div class="row">
+								<section>
+									<div class="row">
+										{{#if loc1.length}} {{#each loc1}}
+										<div class="col-sm-6 col-md-4" sytle="float:left">
+											<div class="thumbnail">
+												<img src="..." alt="...">
+												<div class="caption">
+													<h3>{{this.name}}</h3>
+													<p>${{this.price}}</p>
+													<p><a href="/apartments/{{this._id}}" class="btn btn-primary" role="button">check detail</a></p>
+												</div>
+											</div>
+										</div>
+										{{/each}} {{/if}}
+									</div>
+								</section>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+					Jersey City
+				</a>
+					</h4>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse">
+					<div class="panel-body text-col text-center">
+						<section>
+							<div class="row">
+								{{#if loc2.length}} {{#each loc2}}
+								<div class="col-sm-6 col-md-4" sytle="float:left">
+									<div class="thumbnail">
+										<img src="..." alt="...">
+										<div class="caption">
+											<h3>{{this.name}}</h3>
+											<p>${{this.price}}</p>
+											<p><a href="/apartments/{{this._id}}" class="btn btn-primary" role="button">check detail</a></p>
+										</div>
+									</div>
+								</div>
+								{{/each}} {{/if}}
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+					Union City
+				</a>
+					</h4>
+				</div>
+
+				<div id="collapseThree" class="panel-collapse collapse">
+					<div class="panel-body text-col text-center">
+						<section>
+							<div class="row">
+								{{#if loc3.length}} {{#each loc3}}
+								<div class="col-sm-6 col-md-4" sytle="float:left">
+									<div class="thumbnail">
+										<img src="..." alt="...">
+										<div class="caption">
+											<h3>{{this.name}}</h3>
+											<p>${{this.price}}</p>
+											<p><a href="/apartments/{{this._id}}" class="btn btn-primary" role="button">check detail</a></p>
+										</div>
+									</div>
+								</div>
+								{{/each}} {{/if}}
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+					New York
+				</a>
+					</h4>
+				</div>
+				<div id="collapseFour" class="panel-collapse collapse">
+					<div class="panel-body text-col text-center">
+						<section>
+							<div class="row">
+								{{#if loc4.length}} {{#each loc4}}
+								<div class="col-sm-6 col-md-4" sytle="float:left">
+									<div class="thumbnail">
+										<img src="..." alt="...">
+										<div class="caption">
+											<h3>{{this.name}}</h3>
+											<p>${{this.price}}</p>
+											<p><a href="/apartments/{{this._id}}" class="btn btn-primary" role="button">check detail</a></p>
+										</div>
+									</div>
+								</div>
+								{{/each}} {{/if}}
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+					Newport
+				</a>
+					</h4>
+				</div>
+				<div id="collapseFive" class="panel-collapse collapse">
+					<div class="panel-body text-col text-center">
+						<section>
+							<div class="row">
+								{{#if loc5.length}} {{#each loc5}}
+								<div class="col-sm-6 col-md-4" sytle="float:left">
+									<div class="thumbnail">
+										<img src="..." alt="...">
+										<div class="caption">
+											<h3>{{this.name}}</h3>
+											<p>${{this.price}}</p>
+											<p><a href="/apartments/{{this._id}}" class="btn btn-primary" role="button">check detail</a></p>
+										</div>
+									</div>
+								</div>
+								{{/each}} {{/if}}
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="jumbotron" style="background: white">
+	<div class="container">
+		<h4>Publish New Apartment</h4>
+		<div class="row">
+			<div class="col-sm-12">
+				<form id="new-apartment-form">
+					<div class="form-group">
+						<input id="new-apartment-name" type="text" tabindex="1" class="form-control" placeholder="Apartment address" value="">
+					</div>
+					<div class="form-group">
+						<select class="form-control" id="new-apartment-location" name="location" tabindex="2">
+                        {{#each mylocation}} {{> location_item}} {{/each}}
+                    </select>
+					</div>
+					<div class="form-group">
+						<input id="new-apartment-addressdetail" type="text" tabindex="3" class="form-control" placeholder="Apartment address detail"
+							value="">
+					</div>
+					<div class="form-group">
+						<div class="input-group input-group-md">
+							<span class="input-group-addon glyphicon glyphicon-usd"></span>
+							<input id="new-apartment-price" type="text" tabindex="4" class="form-control" placeholder="Price" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<textarea id="new-apartment-description" type="text" tabindex="5" class="form-control" placeholder="Apartment description"
+							value=""></textarea>
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Publish New Apartment" class="form-control btn btn-login">
+					</div>
+				</form>
+				<div class="alert alert-danger hidden" id="form-alert"></div>
+				<button id="user-log-out" class="btn btn-default">User Log Out</button>
+			</div>
+		</div>
+	</div>
+</div>

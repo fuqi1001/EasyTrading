@@ -1,0 +1,66 @@
+<div class="jumbotron" style="background: #f2f2f2">
+	<div class="container ">
+		<div class="card">
+			<div class="container-fliud">
+				<div class="wrapper row">
+
+					<div class="preview col-md-6">
+						<div class="preview-pic tab-content">
+							<div class="tab-pane active" id="pic-1"><img src="http://placekitten.com/400/252" /></div>
+						</div>
+					</div>
+					<div class="details col-md-6">
+						<h3 style="display:none;">Item ID</h3>
+						<div class="itemId" id="item-id" style="display:none;">{{myitem._id}}</div>
+						<div class="name" id="item-name">
+							<h3 style="text-transform: UPPERCASE;margin-top: 0">{{myitem.name}}</h3>
+						</div>
+						<div>
+							<h4 class="price">Classify: <span>{{classify}}</span></h4>
+							<!--h5>"Classify: "<div class="classify" id="item-classify"><span>{{classify}}</span></div></h5-->
+						</div>
+						<h3 class="price">current price: <span style="color:#ff9f1a">${{myitem.price}}</span></h3>
+						<!--h3>Price</h3><div class="price" id="item-price">{{myitem.price}}</div-->
+						<h3 class="Publisher">Publish by: <span>{{creater}}</span></h3>
+						<!--h3>Creater</h3><div class="creater" id="item-creater">{{creater}}</div-->
+						<h3>Description</h3>
+						<div class="description" id="item-description">{{myitem.description}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<div class="jumbotron" style="background: white">
+	<div class="container">
+		<div class="col-lg-12 text-center" style="padding-left: 0px; padding-right: 0px;">
+			<div class="well" style="background-color: white;">
+				<div class="comments">
+					<ul class="comments" id="item-comments" class="list-unstyled ui-sortable">
+						{{#each myitem.comments}} {{> comment_item}} {{/each}}
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12" >
+				<form id="new-comment-form" role="form" style="display: block;">
+					<div class="form-group">
+						<input id="new-item-comment" type="text" tabindex="1" class="form-control" placeholder="publish your comments" value=""></label>
+					</div>
+					<div class="form-group">
+						<input type="submit" tabindex="2" class="form-control btn btn-login" value="Publish">
+					</div>
+				</form>
+				<div class="alert alert-danger hidden" id="form-alert"></div>
+				<button id="user-log-out" class="btn btn-default">User Log Out</button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,253 @@
+<div class="jumbotron" style="background: #f2f2f2">
+	<div class="container ">
+		<div class="row  ">
+			<div class="col-sm-12 text-col text-center">
+				<section>
+					<div class="row">
+						{{#each myitems}}
+						<div class="col-sm-6 col-md-4" sytle="float:left">
+							<div class="thumbnail">
+								<img src="..." alt="...">
+								<div class="caption">
+									<h3>{{this.name}}</h3>
+									<p>${{this.price}}</p>
+									<p><a href="/items/{{this._id}}" class="btn btn-primary" role="button">check detail</a></p>
+								</div>
+							</div>
+						</div>
+						{{/each}}
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="jumbotron" style="background: #d3d3d3">
+	<div class="container ">
+		<div class="panel-group" id="accordion">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+					Electronics
+				</a>
+					</h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse">
+					<div class="panel-body text-col text-center">
+						<section>
+							<div class="row">
+								{{#if classify1.length}} {{#each classify1}}
+								<div class="col-sm-6 col-md-4" sytle="float:left">
+									<div class="thumbnail">
+										<img src="..." alt="...">
+										<div class="caption">
+											<h3>{{this.name}}</h3>
+											<p>${{this.price}}</p>
+											<p><a href="/items/{{this._id}}" class="btn btn-primary" role="button">check detail</a></p>
+										</div>
+									</div>
+								</div>
+								{{/each}} {{/if}}
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+					Clothing, Shoes and Jewelry
+				</a>
+					</h4>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse">
+					<div class="panel-body text-col text-center">
+						<section>
+							<div class="row">
+								{{#if classify2.length}} {{#each classify2}}
+								<div class="col-sm-6 col-md-4" sytle="float:left">
+									<div class="thumbnail">
+										<img src="..." alt="...">
+										<div class="caption">
+											<h3>{{this.name}}</h3>
+											<p>${{this.price}}</p>
+											<p><a href="/items/{{this._id}}" class="btn btn-primary" role="button">check detail</a></p>
+										</div>
+									</div>
+								</div>
+								{{/each}} {{/if}}
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+					Computers
+				</a>
+					</h4>
+				</div>
+
+				<div id="collapseThree" class="panel-collapse collapse">
+					<div class="panel-body text-col text-center">
+						<section>
+							<div class="row">
+								{{#if classify3.length}} {{#each classify3}}
+								<div class="col-sm-6 col-md-4" sytle="float:left">
+									<div class="thumbnail">
+										<img src="..." alt="...">
+										<div class="caption">
+											<h3>{{this.name}}</h3>
+											<p>${{this.price}}</p>
+											<p><a href="/items/{{this._id}}" class="btn btn-primary" role="button">check detail</a></p>
+										</div>
+									</div>
+								</div>
+								{{/each}} {{/if}}
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+					Books
+				</a>
+					</h4>
+				</div>
+				<div id="collapseFour" class="panel-collapse collapse">
+					<div class="panel-body text-col text-center">
+						<section>
+							<div class="row">
+								{{#if classify4.length}} {{#each classify4}}
+								<div class="col-sm-6 col-md-4" sytle="float:left">
+									<div class="thumbnail">
+										<img src="..." alt="...">
+										<div class="caption">
+											<h3>{{this.name}}</h3>
+											<p>${{this.price}}</p>
+											<p><a href="/items/{{this._id}}" class="btn btn-primary" role="button">check detail</a></p>
+										</div>
+									</div>
+								</div>
+								{{/each}} {{/if}}
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+					Pet Supplies
+				</a>
+					</h4>
+				</div>
+				<div id="collapseFive" class="panel-collapse collapse">
+					<div class="panel-body text-col text-center">
+						<section>
+							<div class="row">
+								{{#if classify5.length}} {{#each classify5}}
+								<div class="col-sm-6 col-md-4" sytle="float:left">
+									<div class="thumbnail">
+										<img src="..." alt="...">
+										<div class="caption">
+											<h3>{{this.name}}</h3>
+											<p>${{this.price}}</p>
+											<p><a href="/items/{{this._id}}" class="btn btn-primary" role="button">check detail</a></p>
+										</div>
+									</div>
+								</div>
+								{{/each}} {{/if}}
+
+							</div>
+						</section>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+					Home Supplies
+				</a>
+					</h4>
+				</div>
+				<div id="collapseSix" class="panel-collapse collapse">
+					<div class="panel-body text-col text-center">
+						<section>
+							<div class="row">
+								{{#if classify6.length}} {{#each classify6}}
+								<div class="col-sm-6 col-md-4" sytle="float:left">
+									<div class="thumbnail">
+										<img src="..." alt="...">
+										<div class="caption">
+											<h3>{{this.name}}</h3>
+											<p>${{this.price}}</p>
+											<p><a href="/items/{{this._id}}" class="btn btn-primary" role="button">check detail</a></p>
+										</div>
+									</div>
+								</div>
+								{{/each}} {{/if}}
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="jumbotron" style="background: white">
+	<div class="container">
+		<h4>Publish New Items</h4>
+		<div class="row">
+			<div class="col-lg-12">
+				<form id="new-item-form" role="form" style="display: block;">
+					<div class="form-group">
+						<input id="new-item-name" type="text" tabindex="1" class="form-control" placeholder="Item name" value="">
+					</div>
+
+
+					<div class="form-group">
+						<select class="form-control" id="new-item-classify" name="classify" tabindex="2">
+                        {{#each myclassify}} {{> classify_item}} {{/each}}
+                    </select>
+					</div>
+
+					<div class="form-group">
+						<div class="input-group input-group-md">
+							<span class="input-group-addon glyphicon glyphicon-usd"></span>
+							<input id="new-item-price" type="text" tabindex="3" class="form-control" placeholder="Price" value="">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<textarea id="new-item-description" type="text" tabindex="4" class="form-control" placeholder="Item Description" value=""></textarea>
+					</div>
+
+					<div class="form-group">
+						<input type="submit" value="Add New Item" tabindex="5" class="form-control btn btn-login" value="Create">
+					</div>
+				</form>
+				<div class="alert alert-danger hidden" id="form-alert"></div>
+				<button id="user-log-out" class="btn btn-default">User Log Out</button>
+			</div>
+		</div>
+	</div>
+</div>

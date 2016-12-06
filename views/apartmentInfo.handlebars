@@ -1,0 +1,62 @@
+<div class="jumbotron" style="background: #f2f2f2">
+	<div class="container ">
+		<div class="card">
+			<div class="container-fliud">
+				<div class="wrapper row">
+					<div class="preview col-md-6">
+						<div class="preview-pic tab-content">
+							<div class="tab-pane active" id="pic-1"><img src="http://placekitten.com/400/252" /></div>
+						</div>
+					</div>
+					<div class="details col-md-6">
+						<h3 style="display:none;">Apartment ID</h3>
+						<div class="apartmentId" id="apartment-id" style="display:none;">{{myapartment._id}}</div>
+
+						<div class="name" id="apartment-name">
+							<h3 style="text-transform: UPPERCASE;margin-top: 0">{{myapartment.name}}</h3>
+							<span>{{myapartment.addressDetail}}</span>
+						</div>
+
+						<div>
+							<h4 class="location" id="apartment-location">Location: <span>{{location}}</span></h4>
+						</div>
+						<h3 class="price" id="apartment-price">current price: <span style="color:#ff9f1a">${{myapartment.price}}</span></h3>
+
+						<h3 class="Publisher" id="apartment-creater">Publish by: <span>{{creater}}</span></h3>
+
+						<h3>Description</h3>
+						<div class="description" id="apartment-description">{{myapartment.description}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="jumbotron" style="background: white">
+	<div class="container">
+		<div class="col-lg-12 text-center" style="padding-left: 0px; padding-right: 0px;">
+			<div class="well" style="background-color: white;">
+				<div class="comments">
+					<ul class="comments" id="apartment-comments" class="list-unstyled ui-sortable">
+						{{#each myapartment.comments}} {{> comment_item}} {{/each}}
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12">
+				<form id="new-comment-form" role="form" style="display: block;">
+					<div class="form-group">
+						<input id="new-apartment-comment" type="text" tabindex="1" class="form-control" placeholder="publish your comments" value=""></label>
+					</div>
+					<div class="form-group">
+						<input type="submit" tabindex="2" class="form-control btn btn-login" value="Publish">
+					</div>
+				</form>
+				<div class="alert alert-danger hidden" id="form-alert"></div>
+				<button id="user-log-out" class="btn btn-default">User Log Out</button>
+			</div>
+		</div>
+	</div>
+</div>
