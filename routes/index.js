@@ -9,7 +9,7 @@ var passport = require("passport");
 var LocalStrategy = require('passport-local').Strategy;
 
 var isLogIn = function (req, res, next) {
-    console.log(req.session);
+    //console.log(req.session);
     if (req.isAuthenticated()) { //if user is authenticated in the session, carry on
         return next();
     }
@@ -18,8 +18,7 @@ var isLogIn = function (req, res, next) {
 
 const constructorMethod = (app) => {
 
-    
-    
+
     app.use(passport.initialize());
     app.use(passport.session());
 
@@ -29,24 +28,24 @@ const constructorMethod = (app) => {
 
     passport.deserializeUser(function (id, done) {
         //console.log(user.username + "  ====");
-        userData.getUserById(id).then((myuser)=>{
+        userData.getUserById(id).then((myuser) => {
             done(null, myuser);
-        }).catch((error)=>{
+        }).catch((error) => {
             done(error);
         });
     });
 
     passport.use('local', new LocalStrategy({
-        usernameField: 'username',
-        passwordField: 'password',
-        passReqToCallback: true
-    },
+            usernameField: 'username',
+            passwordField: 'password',
+            passReqToCallback: true
+        },
         function (req, username, password, done) {
             userData.checkPassword(username, password).then((myuser) => {
-                return done(null, myuser );
+                return done(null, myuser);
             }).catch((err) => {
                 console.log("run in api:" + err);
-                return done(null, false, { message: 'Invalid username or password.' });
+                return done(null, false, {message: 'Invalid username or password.'});
             })
         }
     ));
@@ -56,26 +55,28 @@ const constructorMethod = (app) => {
     app.use("/apartments", apartmentRoutes);
 
     app.get("/", isLogIn, function (req, res, next) {
-        console.log("home page: ");
+        //console.log("home page: ");
 
         if (req.isAuthenticated()) {
-            res.render('home', { partial: "home-scripts" });
+            res.render('home', {partial: "home-scripts"});
         } else {
             res.redirect('/login');
         }
     });
 
     app.get("/login", function (req, res) {
-        res.render("login", { pageTitle: "Log in", partial: "login-scripts" });
+        res.render("login", {pageTitle: "Log in", partial: "login-scripts"});
     });
 
     app.post('/login', function (req, res, next) {
         passport.authenticate('local', function (err, user, info) {
-            console.log(err);
-            console.log(user);
-            console.log(info);
+            //console.log(err);
+            // console.log(user);
+            //console.log(info);
 
-            if (err) { return next(err) }
+            if (err) {
+                return next(err)
+            }
             if (!user) {
                 // *** Display message without using flash option
                 // re-render the login form with a message
@@ -85,7 +86,9 @@ const constructorMethod = (app) => {
                 });
             }
             req.logIn(user, function (err) {
-                if (err) { return next(err); }
+                if (err) {
+                    return next(err);
+                }
                 return res.json({
                     success: true,
                     user: req.user,
@@ -96,17 +99,17 @@ const constructorMethod = (app) => {
     });
 
     /*app.post("/login", passport.authenticate('local', {
-        failureRedirect: '/login-fail', session: true
-    }), function (req, res) {
-        //console.log("run in this")
-        res.json({
-            success: true,
-            pageurl: '/test2'
-        });
+     failureRedirect: '/login-fail', session: true
+     }), function (req, res) {
+     //console.log("run in this")
+     res.json({
+     success: true,
+     pageurl: '/test2'
+     });
 
-    })*/
+     })*/
 
-    app.get("/logout", function(req, res){
+    app.get("/logout", function (req, res) {
         req.logout();
         return res.json({
             success: true,
@@ -123,14 +126,13 @@ const constructorMethod = (app) => {
     })
 
     app.get("/create-user", function (req, res) {
-        res.render("create-user", { pageTitle: "Create new user", partial: "create-user-scripts" });
+        res.render("create-user", {pageTitle: "Create new user", partial: "create-user-scripts"});
     })
 
 
     app.get("/test2", function (req, res) {
         res.json("login succ");
     })
-
 
 
     app.use("*", (req, res) => {

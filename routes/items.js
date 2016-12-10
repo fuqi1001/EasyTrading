@@ -7,7 +7,7 @@ const classifyData = data.classify;
 
 // define a middleware function to be used for every secured routes
 var isLogIn = function (req, res, next) {
-    console.log(req.session);
+    //console.log(req.session);
     if (req.isAuthenticated()) { //if user is authenticated in the session, carry on
         return next();
     }

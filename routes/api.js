@@ -8,8 +8,8 @@ const apartmentData = data.apartments;
 const commentData = data.comments;
 
 router.post("/comment", function (req, res) {
-    console.log(req.body);
-    console.log(req.user);
+    //console.log(req.body);
+    //console.log(req.user);
     return commentData.addCommentToType(req.user._id, xss(req.body.comment), req.body.typeId, req.body.type).then(() => {
         if(req.body.type == "item"){
             pageurl = '/items/' + req.body.typeId
@@ -24,8 +24,8 @@ router.post("/comment", function (req, res) {
 });
 
 router.post("/newItem", function (req, res) {
-    console.log(req.body);
-    console.log(req.user);
+    //console.log(req.body);
+    //console.log(req.user);
     return itemData.addItem(req.user._id, req.body.classify, xss(req.body.name), xss(req.body.price), xss(req.body.description), []).then((newitem) => {
         res.json({
             success: true,
@@ -35,8 +35,8 @@ router.post("/newItem", function (req, res) {
 });
 
 router.post("/newApartment", function (req, res) {
-    console.log(req.body);
-    console.log(req.user);
+    //console.log(req.body);
+    //console.log(req.user);
     return apartmentData.addApartment(req.user._id, req.body.location, xss(req.body.name), xss(req.body.addressDetail), xss(req.body.price), xss(req.body.description), []).then((newapartment) => {
         res.json({
             success: true,
@@ -63,7 +63,7 @@ router.post("/create-user", function (request, response) {
             })
         } else {
             userData.addUser(xss(request.body.username), xss(request.body.password), xss(request.body.email), xss(request.body.fullname)).then((myuser) => {
-                console.log(myuser);
+                //console.log(myuser);
                 response.json({
                     success: true,
                     pageurl: '/login'
